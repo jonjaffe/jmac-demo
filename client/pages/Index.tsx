@@ -10,6 +10,7 @@ import CallToActionSection, {
   ActionButton,
 } from "@/components/CallToActionSection";
 import FeaturesSection, { Feature } from "@/components/FeaturesSection";
+import ProductShowcase, { ProductItem } from "@/components/ProductShowcase";
 
 const Index = () => {
   const featuredProducts: Product[] = [
