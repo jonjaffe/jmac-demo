@@ -45,6 +45,7 @@ const KitchenSink = () => (
         <TabsTrigger value="features">Features</TabsTrigger>
         <TabsTrigger value="products">Product Grid</TabsTrigger>
         <TabsTrigger value="themes">Style Themes</TabsTrigger>
+        <TabsTrigger value="lifestyle">Lifestyle Showcase</TabsTrigger>
         <TabsTrigger value="heroChildren">Hero With Children</TabsTrigger>
         <TabsTrigger value="ui">UI Components</TabsTrigger>
         <TabsTrigger value="footer">Footer</TabsTrigger>
