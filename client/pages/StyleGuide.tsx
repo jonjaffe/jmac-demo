@@ -115,10 +115,18 @@ const StyleGuide = () => {
         title="The Summer"
         highlightedText="Style Guide"
         description="Discover effortless elegance for the season ahead. From coastal getaways to city adventures, find pieces that move with you through every summer moment."
-        primaryButtonText="Shop the Collection"
-        primaryButtonHref="/collections/all"
-        secondaryButtonText="Download Guide"
-        secondaryButtonHref="#download"
+        buttons={[
+          {
+            text: "Shop the Collection",
+            href: "/collections/all",
+            variant: "default",
+          },
+          {
+            text: "Download Guide",
+            href: "#download",
+            variant: "outline",
+          },
+        ]}
         image="https://images.pexels.com/photos/32796818/pexels-photo-32796818.jpeg"
         imageAlt="Summer Style Guide"
         backgroundColor="bg-gradient-to-r from-blue-50 to-green-50"
