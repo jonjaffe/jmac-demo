@@ -135,10 +135,18 @@ const Index = () => {
         title="Timeless Style,"
         highlightedText="Modern Living"
         description="Discover our curated collection of classic American clothing designed for life's memorable moments."
-        primaryButtonText="Shop New Arrivals"
-        primaryButtonHref="/collections/new-arrivals"
-        secondaryButtonText="View Style Guide"
-        secondaryButtonHref="/style-guide"
+        buttons={[
+          {
+            text: "Shop New Arrivals",
+            href: "/collections/new-arrivals",
+            variant: "default",
+          },
+          {
+            text: "View Style Guide",
+            href: "/style-guide",
+            variant: "outline",
+          },
+        ]}
         image="https://images.pexels.com/photos/27733947/pexels-photo-27733947.jpeg"
         imageAlt="Spring Collection Hero"
       />
