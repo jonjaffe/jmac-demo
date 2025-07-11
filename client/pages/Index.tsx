@@ -99,6 +99,33 @@ const Index = () => {
     },
   ];
 
+  const productShowcaseItems: ProductItem[] = [
+    {
+      title: "The Linen",
+      subtitle: "Shirt",
+      image:
+        "https://images.pexels.com/photos/6276012/pexels-photo-6276012.jpeg",
+      href: "/collections/shirts/linen-shirt",
+      alt: "White linen shirt",
+    },
+    {
+      title: "The White",
+      subtitle: "Dress",
+      image:
+        "https://images.pexels.com/photos/1887465/pexels-photo-1887465.jpeg",
+      href: "/collections/dresses/white-dress",
+      alt: "White summer dress",
+    },
+    {
+      title: "The Wicker",
+      subtitle: "Bag",
+      image:
+        "https://images.pexels.com/photos/8365688/pexels-photo-8365688.jpeg",
+      href: "/collections/accessories/wicker-bag",
+      alt: "Wicker handbag",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
