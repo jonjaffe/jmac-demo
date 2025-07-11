@@ -475,6 +475,87 @@ const KitchenSink = () => (
           backgroundColor="bg-muted/30"
         />
       </TabsContent>
+      <TabsContent value="lifestyle">
+        <h2 className="text-2xl font-semibold text-center mb-4">
+          LifestyleShowcase Variants
+        </h2>
+        {/* LifestyleShowcase Variants */}
+        <LifestyleShowcase
+          items={[
+            {
+              image:
+                "https://images.pexels.com/photos/27733947/pexels-photo-27733947.jpeg",
+              title: "The Linen Shirt",
+              alt: "Person wearing white linen shirt outdoors",
+            },
+            {
+              image:
+                "https://images.pexels.com/photos/1887465/pexels-photo-1887465.jpeg",
+              title: "The White Dress",
+              alt: "Woman in white dress",
+            },
+            {
+              image:
+                "https://images.pexels.com/photos/1870926/pexels-photo-1870926.jpeg",
+              title: "The Wicker Bag",
+              alt: "Person holding wicker bag",
+            },
+          ]}
+          backgroundColor="bg-muted/30"
+          gap="sm"
+          aspectRatio="portrait"
+        />
+        <LifestyleShowcase
+          items={[
+            {
+              image:
+                "https://images.pexels.com/photos/5704846/pexels-photo-5704846.jpeg",
+              title: "Summer Essentials",
+              alt: "Summer clothing collection",
+            },
+            {
+              image:
+                "https://images.pexels.com/photos/5264948/pexels-photo-5264948.jpeg",
+              title: "Classic Workwear",
+              alt: "Professional attire",
+            },
+          ]}
+          backgroundColor="bg-background"
+          gap="md"
+          aspectRatio="square"
+        />
+        <LifestyleShowcase
+          items={[
+            {
+              image:
+                "https://images.pexels.com/photos/4210854/pexels-photo-4210854.jpeg",
+              title: "Cozy Comfort",
+              alt: "Comfortable loungewear",
+            },
+            {
+              image:
+                "https://images.pexels.com/photos/5717325/pexels-photo-5717325.jpeg",
+              title: "Weekend Ready",
+              alt: "Casual weekend outfit",
+            },
+            {
+              image:
+                "https://images.pexels.com/photos/6276012/pexels-photo-6276012.jpeg",
+              title: "Timeless Pieces",
+              alt: "Classic wardrobe essentials",
+            },
+            {
+              image:
+                "https://images.pexels.com/photos/8365688/pexels-photo-8365688.jpeg",
+              title: "Perfect Accessories",
+              alt: "Luxury accessories",
+            },
+          ]}
+          backgroundColor="bg-gradient-to-r from-sage-100 to-cream-100"
+          gap="lg"
+          aspectRatio="landscape"
+        />
+      </TabsContent>
       <TabsContent value="heroChildren">
         <h2 className="text-2xl font-semibold text-center mb-4">
           HeroWithChildren
