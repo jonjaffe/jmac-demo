@@ -571,6 +571,63 @@ Builder.registerComponent(StyleThemes, {
   ],
 });
 
+Builder.registerComponent(LifestyleShowcase, {
+  name: "LifestyleShowcase",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/layout-grid.svg",
+  inputs: [
+    {
+      name: "items",
+      type: "list",
+      defaultValue: [
+        {
+          image:
+            "https://images.pexels.com/photos/27733947/pexels-photo-27733947.jpeg",
+          title: "The Linen Shirt",
+          alt: "Person wearing white linen shirt outdoors",
+        },
+        {
+          image:
+            "https://images.pexels.com/photos/1887465/pexels-photo-1887465.jpeg",
+          title: "The White Dress",
+          alt: "Woman in white dress",
+        },
+        {
+          image:
+            "https://images.pexels.com/photos/1870926/pexels-photo-1870926.jpeg",
+          title: "The Wicker Bag",
+          alt: "Person holding wicker bag",
+        },
+      ],
+      subFields: [
+        { name: "image", type: "string" },
+        { name: "title", type: "string" },
+        { name: "alt", type: "string", required: false },
+      ],
+    },
+    {
+      name: "backgroundColor",
+      type: "string",
+      required: false,
+      defaultValue: "bg-white",
+    },
+    {
+      name: "gap",
+      type: "string",
+      enum: ["sm", "md", "lg"],
+      required: false,
+      defaultValue: "sm",
+    },
+    {
+      name: "aspectRatio",
+      type: "string",
+      enum: ["square", "portrait", "landscape"],
+      required: false,
+      defaultValue: "portrait",
+    },
+    { name: "className", type: "string", required: false },
+  ],
+});
+
 Builder.registerComponent(withChildren(HeroWithChildren), {
   name: "HeroWithChildren",
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/photo.svg",
