@@ -158,6 +158,25 @@ const Index = () => {
         collections={collections}
       />
 
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-serif font-semibold mb-4">
+              Signature Pieces
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Our most beloved designs that define the essence of timeless style
+              and quality craftsmanship.
+            </p>
+          </div>
+          <ProductShowcase
+            products={productShowcaseItems}
+            zoomScale={1.08}
+            gap="gap-2"
+          />
+        </div>
+      </div>
+
       <CallToActionSection
         badge="Style Guide"
         title="The Summer Style Guide"
