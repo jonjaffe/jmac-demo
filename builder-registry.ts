@@ -492,6 +492,65 @@ Builder.registerComponent(ProductGrid, {
   ],
 });
 
+Builder.registerComponent(ProductShowcase, {
+  name: "ProductShowcase",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/photo-collage.svg",
+  inputs: [
+    {
+      name: "products",
+      type: "list",
+      defaultValue: [
+        {
+          title: "The Linen",
+          subtitle: "Shirt",
+          image:
+            "https://images.pexels.com/photos/6276012/pexels-photo-6276012.jpeg",
+          href: "/collections/shirts/linen-shirt",
+          alt: "White linen shirt",
+        },
+        {
+          title: "The White",
+          subtitle: "Dress",
+          image:
+            "https://images.pexels.com/photos/1887465/pexels-photo-1887465.jpeg",
+          href: "/collections/dresses/white-dress",
+          alt: "White summer dress",
+        },
+        {
+          title: "The Wicker",
+          subtitle: "Bag",
+          image:
+            "https://images.pexels.com/photos/8365688/pexels-photo-8365688.jpeg",
+          href: "/collections/accessories/wicker-bag",
+          alt: "Wicker handbag",
+        },
+      ],
+      subFields: [
+        { name: "title", type: "string" },
+        { name: "subtitle", type: "string", required: false },
+        { name: "image", type: "string" },
+        { name: "href", type: "string" },
+        { name: "alt", type: "string", required: false },
+      ],
+    },
+    { name: "className", type: "string", required: false },
+    {
+      name: "imageHeight",
+      type: "string",
+      required: false,
+      defaultValue: "h-[400px] md:h-[500px] lg:h-[632px]",
+    },
+    { name: "gap", type: "string", required: false, defaultValue: "gap-1.5" },
+    {
+      name: "showTitles",
+      type: "boolean",
+      required: false,
+      defaultValue: true,
+    },
+    { name: "zoomScale", type: "number", required: false, defaultValue: 1.1 },
+  ],
+});
+
 Builder.registerComponent(StyleThemes, {
   name: "StyleThemes",
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/shirt.svg",
