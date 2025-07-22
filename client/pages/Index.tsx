@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ProductGrid, { Product } from "@/components/ProductGrid";
+import ProductShowcase from "@/components/ProductShowcase";
 import CollectionsShowcase, {
   Collection,
 } from "@/components/CollectionsShowcase";
