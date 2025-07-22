@@ -125,6 +125,8 @@ const Index = () => {
         showCategory={true}
       />
 
+      <ProductShowcase />
+
       <CollectionsShowcase
         title="Shop Collections"
         description="Explore our carefully curated collections designed for every occasion and season."
