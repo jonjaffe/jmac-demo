@@ -7,6 +7,7 @@ import ColorPalette from "../components/ColorPalette";
 import FeaturesSection from "../components/FeaturesSection";
 import ProductGrid from "../components/ProductGrid";
 import StyleThemes from "../components/StyleThemes";
+import TestComponent from "../components/TestComponent";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
 import { Button } from "../components/ui/button";
@@ -35,6 +36,7 @@ const KitchenSink = () => (
         <TabsTrigger value="heroChildren">Hero With Children</TabsTrigger>
         <TabsTrigger value="ui">UI Components</TabsTrigger>
         <TabsTrigger value="footer">Footer</TabsTrigger>
+        <TabsTrigger value="test">Test Component</TabsTrigger>
       </TabsList>
       <TabsContent value="hero">
         <h2 className="text-2xl font-semibold text-center mb-4">HeroSection Variants</h2>
@@ -375,6 +377,16 @@ const KitchenSink = () => (
           </Card>
         </div>
       </TabsContent>
+      <TabsContent value="test">
+        <h2 className="text-2xl font-semibold text-center mb-4">Test Component</h2>
+        <TestComponent
+          title="Integration Test"
+          description="A small, typed component added to the Kitchen Sink and Builder registry."
+          emoji="🧪"
+          backgroundColor="bg-muted/30"
+          align="center"
+        />
+      </TabsContent>
       <TabsContent value="footer">
         <Footer showStayInTouch={true} />
       </TabsContent>
@@ -382,4 +394,4 @@ const KitchenSink = () => (
   </div>
 );
 
-export default KitchenSink; 
+export default KitchenSink;
