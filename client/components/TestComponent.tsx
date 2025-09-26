@@ -15,14 +15,19 @@ const toneStyles: Record<NonNullable<TestComponentProps["tone"]>, string> = {
   error: "bg-red-50 text-red-900 border-red-200",
 };
 
-export default function TestComponent({ title, message, tone = "info", className }: TestComponentProps) {
+export default function TestComponent({
+  title,
+  message,
+  tone = "info",
+  className,
+}: TestComponentProps) {
   return (
     <section
       aria-label={title}
       className={cn(
         "w-full rounded-md border p-4 md:p-6 shadow-sm",
         toneStyles[tone],
-        className
+        className,
       )}
     >
       <div className="flex items-start gap-3">
@@ -34,9 +39,7 @@ export default function TestComponent({ title, message, tone = "info", className
         </span>
         <div className="space-y-1">
           <h3 className="text-lg font-semibold">{title}</h3>
-          {message ? (
-            <p className="text-sm opacity-90">{message}</p>
-          ) : null}
+          {message ? <p className="text-sm opacity-90">{message}</p> : null}
         </div>
       </div>
     </section>
