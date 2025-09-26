@@ -14,6 +14,7 @@ import { Badge } from "../components/ui/badge";
 import { Card, CardContent } from "../components/ui/card";
 import { Separator } from "../components/ui/separator";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/tabs";
+import TestComponent from "../components/TestComponent";
 
 const buttonVariants = ["default", "destructive", "outline", "secondary", "ghost", "link"];
 const buttonSizes = ["default", "sm", "lg", "icon"];
@@ -34,6 +35,7 @@ const KitchenSink = () => (
         <TabsTrigger value="themes">Style Themes</TabsTrigger>
         <TabsTrigger value="heroChildren">Hero With Children</TabsTrigger>
         <TabsTrigger value="ui">UI Components</TabsTrigger>
+        <TabsTrigger value="test">Test</TabsTrigger>
         <TabsTrigger value="footer">Footer</TabsTrigger>
       </TabsList>
       <TabsContent value="hero">
@@ -375,6 +377,14 @@ const KitchenSink = () => (
           </Card>
         </div>
       </TabsContent>
+      <TabsContent value="test">
+        <div className="max-w-3xl mx-auto space-y-4">
+          <TestComponent title="Info" message="This is a test info." tone="info" />
+          <TestComponent title="Success" message="Operation succeeded." tone="success" />
+          <TestComponent title="Warning" message="Be careful." tone="warning" />
+          <TestComponent title="Error" message="Something went wrong." tone="error" />
+        </div>
+      </TabsContent>
       <TabsContent value="footer">
         <Footer showStayInTouch={true} />
       </TabsContent>
@@ -382,4 +392,4 @@ const KitchenSink = () => (
   </div>
 );
 
-export default KitchenSink; 
+export default KitchenSink;
