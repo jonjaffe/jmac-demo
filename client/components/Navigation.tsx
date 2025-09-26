@@ -9,18 +9,17 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
+import useNavigation from "@/hooks/use-navigation";
 
 const Navigation = () => {
   const location = useLocation();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const { navigationData, loading, error } = useNavigation();
 
-  const mainNavItems = [
-    { label: "Women", href: "/collections/women" },
-    { label: "Men", href: "/collections/men" },
-    { label: "Accessories", href: "/collections/accessories" },
-    { label: "Sale", href: "/collections/sale" },
-  ];
-
+  // Use the fetched main navigation data or fallback to empty array if loading
+  const mainNavItems = loading ? [] : navigationData.mainNavItems;
+  
+  // Keep secondary navigation items hardcoded as they were before
   const secondaryNavItems = [
     { label: "New Arrivals", href: "/collections/new-arrivals" },
     { label: "Best Sellers", href: "/collections/best-sellers" },
@@ -29,6 +28,22 @@ const Navigation = () => {
     { label: "Blog", href: "/blog" },
     { label: "Kitchen Sink", href: "/kitchen-sink" },
   ];
+
+  // Show loading state if data is being fetched
+  if (loading) {
+    return (
+      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="text-2xl lg:text-3xl font-serif font-semibold text-primary">
+              McLaughlin & Co.
+            </div>
+            <div className="text-sm text-muted-foreground">Loading navigation...</div>
+          </div>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
