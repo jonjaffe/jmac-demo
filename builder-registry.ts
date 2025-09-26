@@ -367,6 +367,18 @@ Builder.registerComponent(withChildren(HeroWithChildren), {
 });
 
 
+Builder.registerComponent(TestComponent, {
+  name: "TestComponent",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/test-pipe.svg",
+  inputs: [
+    { name: "title", type: "string", defaultValue: "Integration Test" },
+    { name: "description", type: "string", required: false, defaultValue: "A small, typed component added to the Kitchen Sink and Builder registry." },
+    { name: "emoji", type: "string", required: false, defaultValue: "🧪" },
+    { name: "backgroundColor", type: "string", required: false, defaultValue: "bg-muted/30" },
+    { name: "align", type: "string", enum: ["left", "center", "right"], defaultValue: "center" },
+  ],
+});
+
 Builder.register("editor.settings", {
   designTokens: {
     colors: [
