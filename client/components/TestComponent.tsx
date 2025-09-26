@@ -15,7 +15,10 @@ export interface TestComponentProps {
   align?: "left" | "center" | "right";
 }
 
-const alignmentClasses: Record<NonNullable<TestComponentProps["align"]>, string> = {
+const alignmentClasses: Record<
+  NonNullable<TestComponentProps["align"]>,
+  string
+> = {
   left: "text-left items-start",
   center: "text-center items-center",
   right: "text-right items-end",
@@ -43,9 +46,9 @@ export default function TestComponent({
           </CardHeader>
           <CardContent className="text-sm text-muted-foreground">
             <p>
-              This is a simple, well-typed demo component for testing integration
-              and layout. It accepts a title, optional description, an emoji
-              icon, background color utility class, and alignment.
+              This is a simple, well-typed demo component for testing
+              integration and layout. It accepts a title, optional description,
+              an emoji icon, background color utility class, and alignment.
             </p>
           </CardContent>
         </Card>
