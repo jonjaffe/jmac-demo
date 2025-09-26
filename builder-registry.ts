@@ -13,6 +13,7 @@ import { Badge } from "./client/components/ui/badge";
 import { Card, CardContent } from "./client/components/ui/card";
 import { Separator } from "./client/components/ui/separator";
 import HeroWithChildren from "./client/components/HeroWithChildren";
+import TestComponent from "./client/components/TestComponent";
 
 Builder.registerComponent(Button, {
   name: "Button",
@@ -425,4 +426,3 @@ Builder.register("editor.settings", {
     ],
   }
 });
-
