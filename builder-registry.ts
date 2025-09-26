@@ -13,32 +13,16 @@ import { Badge } from "./client/components/ui/badge";
 import { Card, CardContent } from "./client/components/ui/card";
 import { Separator } from "./client/components/ui/separator";
 import HeroWithChildren from "./client/components/HeroWithChildren";
-import TestComponent from "./client/components/TestComponent";
 
 Builder.registerComponent(Button, {
   name: "Button",
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/click.svg",
   inputs: [
     { name: "children", type: "string", defaultValue: "Shop New Arrivals" },
-    {
-      name: "variant",
-      type: "string",
-      enum: ["default", "destructive", "outline", "secondary", "ghost", "link"],
-      defaultValue: "default",
-    },
-    {
-      name: "size",
-      type: "string",
-      enum: ["default", "sm", "lg", "icon"],
-      defaultValue: "lg",
-    },
+    { name: "variant", type: "string", enum: ["default", "destructive", "outline", "secondary", "ghost", "link"], defaultValue: "default" },
+    { name: "size", type: "string", enum: ["default", "sm", "lg", "icon"], defaultValue: "lg" },
     { name: "className", type: "string" },
-    {
-      name: "type",
-      type: "string",
-      enum: ["button", "submit", "reset"],
-      defaultValue: "button",
-    },
+    { name: "type", type: "string", enum: ["button", "submit", "reset"], defaultValue: "button" },
   ],
 });
 
@@ -47,12 +31,7 @@ Builder.registerComponent(Badge, {
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/badge.svg",
   inputs: [
     { name: "children", type: "string", defaultValue: "Style Guide" },
-    {
-      name: "variant",
-      type: "string",
-      enum: ["default", "secondary", "destructive", "outline"],
-      defaultValue: "outline",
-    },
+    { name: "variant", type: "string", enum: ["default", "secondary", "destructive", "outline"], defaultValue: "outline" },
     { name: "className", type: "string", defaultValue: "w-fit mb-4 mx-auto" },
   ],
 });
@@ -62,74 +41,23 @@ Builder.registerComponent(CallToActionSection, {
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/volume.svg",
   inputs: [
     { name: "title", type: "string", defaultValue: "The Summer Style Guide" },
-    {
-      name: "description",
-      type: "string",
-      defaultValue:
-        "Discover the perfect pieces for warm weather entertaining, coastal getaways, and everything in between. Our curated selection makes summer dressing effortless and elegant.",
-    },
-    {
-      name: "buttons",
-      type: "list",
+    { name: "description", type: "string", defaultValue: "Discover the perfect pieces for warm weather entertaining, coastal getaways, and everything in between. Our curated selection makes summer dressing effortless and elegant." },
+    { name: "buttons", type: "list",
       defaultValue: [
-        {
-          text: "Explore the Guide",
-          href: "/style-guide",
-          variant: "default",
-          className: "btn-primary",
-        },
+        { text: "Explore the Guide", href: "/style-guide", variant: "default", className: "btn-primary" }
       ],
       subFields: [
         { name: "text", type: "string" },
         { name: "href", type: "string" },
-        {
-          name: "variant",
-          type: "string",
-          enum: ["default", "outline", "ghost"],
-          defaultValue: "default",
-        },
+        { name: "variant", type: "string", enum: ["default", "outline", "ghost"], defaultValue: "default" },
         { name: "className", type: "string", defaultValue: "btn-primary" },
-      ],
-    },
-    {
-      name: "badge",
-      type: "string",
-      required: false,
-      defaultValue: "Style Guide",
-    },
-    {
-      name: "image",
-      type: "string",
-      required: false,
-      defaultValue:
-        "https://images.pexels.com/photos/32796818/pexels-photo-32796818.jpeg",
-    },
-    {
-      name: "imageAlt",
-      type: "string",
-      required: false,
-      defaultValue: "Summer Style Guide",
-    },
-    {
-      name: "backgroundColor",
-      type: "string",
-      required: false,
-      defaultValue: "bg-gradient-to-r from-sage-100 to-cream-100",
-    },
-    {
-      name: "layout",
-      type: "string",
-      enum: ["centered", "side-by-side"],
-      required: false,
-      defaultValue: "side-by-side",
-    },
-    {
-      name: "imagePosition",
-      type: "string",
-      enum: ["left", "right"],
-      required: false,
-      defaultValue: "left",
-    },
+      ] },
+    { name: "badge", type: "string", required: false, defaultValue: "Style Guide" },
+    { name: "image", type: "string", required: false, defaultValue: "https://images.pexels.com/photos/32796818/pexels-photo-32796818.jpeg" },
+    { name: "imageAlt", type: "string", required: false, defaultValue: "Summer Style Guide" },
+    { name: "backgroundColor", type: "string", required: false, defaultValue: "bg-gradient-to-r from-sage-100 to-cream-100" },
+    { name: "layout", type: "string", enum: ["centered", "side-by-side"], required: false, defaultValue: "side-by-side" },
+    { name: "imagePosition", type: "string", enum: ["left", "right"], required: false, defaultValue: "left" },
   ],
 });
 
@@ -138,58 +66,36 @@ Builder.registerComponent(CollectionsShowcase, {
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/layout-grid.svg",
   inputs: [
     { name: "title", type: "string", defaultValue: "Shop Collections" },
-    {
-      name: "description",
-      type: "string",
-      defaultValue:
-        "Explore our carefully curated collections designed for every occasion and season.",
-    },
-    {
-      name: "collections",
-      type: "list",
+    { name: "description", type: "string", defaultValue: "Explore our carefully curated collections designed for every occasion and season." },
+    { name: "collections", type: "list",
       defaultValue: [
         {
           title: "Women's Collection",
           description: "Timeless pieces for the modern woman",
-          image:
-            "https://images.pexels.com/photos/5704846/pexels-photo-5704846.jpeg",
-          href: "/collections/women",
+          image: "https://images.pexels.com/photos/5704846/pexels-photo-5704846.jpeg",
+          href: "/collections/women"
         },
         {
           title: "Men's Collection",
           description: "Classic American style essentials",
-          image:
-            "https://images.pexels.com/photos/5264948/pexels-photo-5264948.jpeg",
-          href: "/collections/men",
+          image: "https://images.pexels.com/photos/5264948/pexels-photo-5264948.jpeg",
+          href: "/collections/men"
         },
         {
           title: "Accessories",
           description: "Perfect finishing touches",
-          image:
-            "https://images.pexels.com/photos/1870926/pexels-photo-1870926.jpeg",
-          href: "/collections/accessories",
-        },
+          image: "https://images.pexels.com/photos/1870926/pexels-photo-1870926.jpeg",
+          href: "/collections/accessories"
+        }
       ],
       subFields: [
         { name: "title", type: "string" },
         { name: "description", type: "string" },
         { name: "image", type: "string" },
         { name: "href", type: "string" },
-      ],
-    },
-    {
-      name: "backgroundColor",
-      type: "string",
-      required: false,
-      defaultValue: "bg-muted/30",
-    },
-    {
-      name: "columns",
-      type: "string",
-      enum: ["1", "2", "3", "4"],
-      required: false,
-      defaultValue: "3",
-    },
+      ] },
+    { name: "backgroundColor", type: "string", required: false, defaultValue: "bg-muted/30" },
+    { name: "columns", type: "string", enum: ["1", "2", "3", "4"], required: false, defaultValue: "3" },
   ],
 });
 
@@ -198,15 +104,8 @@ Builder.registerComponent(ColorPalette, {
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/palette.svg",
   inputs: [
     { name: "title", type: "string", defaultValue: "Summer Color Palette" },
-    {
-      name: "description",
-      type: "string",
-      defaultValue:
-        "This season's colors are inspired by coastal landscapes and summer sunsets. Mix and match these hues for effortless coordination.",
-    },
-    {
-      name: "colors",
-      type: "list",
+    { name: "description", type: "string", defaultValue: "This season's colors are inspired by coastal landscapes and summer sunsets. Mix and match these hues for effortless coordination." },
+    { name: "colors", type: "list",
       defaultValue: [
         { name: "Ocean Blue", color: "bg-blue-500", hex: "#3B82F6" },
         { name: "Sage Green", color: "bg-green-400", hex: "#4ADE80" },
@@ -219,21 +118,9 @@ Builder.registerComponent(ColorPalette, {
         { name: "name", type: "string" },
         { name: "color", type: "string" },
         { name: "hex", type: "color" },
-      ],
-    },
-    {
-      name: "backgroundColor",
-      type: "string",
-      required: false,
-      defaultValue: "bg-background",
-    },
-    {
-      name: "columns",
-      type: "string",
-      enum: ["2", "3", "4", "5", "6"],
-      required: false,
-      defaultValue: "6",
-    },
+      ] },
+    { name: "backgroundColor", type: "string", required: false, defaultValue: "bg-background" },
+    { name: "columns", type: "string", enum: ["2", "3", "4", "5", "6"], required: false, defaultValue: "6" },
   ],
 });
 
@@ -241,123 +128,51 @@ Builder.registerComponent(FeaturesSection, {
   name: "FeaturesSection",
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/settings.svg",
   inputs: [
-    {
-      name: "features",
-      type: "list",
+    { name: "features", type: "list",
       defaultValue: [
-        {
-          icon: "🚚",
-          title: "Free Shipping",
-          description: "On orders over $150",
-        },
-        {
-          icon: "🔄",
-          title: "Easy Returns",
-          description: "30-day return policy",
-        },
-        {
-          icon: "🛡️",
-          title: "Secure Payment",
-          description: "Your data is protected",
-        },
-        {
-          icon: "⭐",
-          title: "Premium Quality",
-          description: "Finest materials and craftsmanship",
-        },
+        { icon: "🚚", title: "Free Shipping", description: "On orders over $150" },
+        { icon: "🔄", title: "Easy Returns", description: "30-day return policy" },
+        { icon: "🛡️", title: "Secure Payment", description: "Your data is protected" },
+        { icon: "⭐", title: "Premium Quality", description: "Finest materials and craftsmanship" },
       ],
       subFields: [
         { name: "icon", type: "string" },
         { name: "title", type: "string" },
         { name: "description", type: "string" },
-      ],
-    },
-    {
-      name: "backgroundColor",
-      type: "string",
-      required: false,
-      defaultValue: "bg-background",
-    },
-    {
-      name: "columns",
-      type: "string",
-      enum: ["2", "3", "4"],
-      required: false,
-      defaultValue: "4",
-    },
+      ] },
+    { name: "backgroundColor", type: "string", required: false, defaultValue: "bg-background" },
+    { name: "columns", type: "string", enum: ["2", "3", "4"], required: false, defaultValue: "4" },
   ],
 });
 
 Builder.registerComponent(Footer, {
   name: "Footer",
-  image:
-    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgMTlIMjFWMjFIM1YxOVoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPgo8cGF0aCBkPSJNMyAxM0gyMVYxNUgzVjEzWiIgZmlsbD0iY3VycmVudENvbG9yIi8+CjxwYXRoIGQ9Ik0zIDdIMjFWOEgzVjdaIiBmaWxsPSJjdXJyZW50Q29sb3IiLz4KPC9zdmc+",
-  inputs: [{ name: "showStayInTouch", type: "boolean", defaultValue: true }],
+  image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgMTlIMjFWMjFIM1YxOVoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPgo8cGF0aCBkPSJNMyAxM0gyMVYxNUgzVjEzWiIgZmlsbD0iY3VycmVudENvbG9yIi8+CjxwYXRoIGQ9Ik0zIDdIMjFWOEgzVjdaIiBmaWxsPSJjdXJyZW50Q29sb3IiLz4KPC9zdmc+",
+  inputs: [
+    { name: "showStayInTouch", type: "boolean", defaultValue: true },
+  ],
 });
 
 Builder.registerComponent(HeroSection, {
   name: "HeroSection",
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/photo.svg",
   inputs: [
-    {
-      name: "badge",
-      type: "string",
-      required: false,
-      defaultValue: "New Spring Collection",
-    },
+    { name: "badge", type: "string", required: false, defaultValue: "New Spring Collection" },
     { name: "title", type: "string", defaultValue: "Timeless Style," },
-    {
-      name: "highlightedText",
-      type: "string",
-      required: false,
-      defaultValue: "Modern Living",
-    },
-    {
-      name: "description",
-      type: "string",
-      defaultValue:
-        "Discover our curated collection of classic American clothing designed for life's memorable moments.",
-    },
-    {
-      name: "buttons",
-      type: "list",
+    { name: "highlightedText", type: "string", required: false, defaultValue: "Modern Living" },
+    { name: "description", type: "string", defaultValue: "Discover our curated collection of classic American clothing designed for life's memorable moments." },
+    { name: "buttons", type: "list",
       defaultValue: [
-        {
-          text: "Shop New Arrivals",
-          href: "/collections/new-arrivals",
-          variant: "default",
-        },
-        { text: "View Style Guide", href: "/style-guide", variant: "outline" },
+        { text: "Shop New Arrivals", href: "/collections/new-arrivals", variant: "default" },
+        { text: "View Style Guide", href: "/style-guide", variant: "outline" }
       ],
       subFields: [
         { name: "text", type: "string" },
         { name: "href", type: "string" },
-        {
-          name: "variant",
-          type: "string",
-          enum: [
-            "default",
-            "outline",
-            "destructive",
-            "secondary",
-            "ghost",
-            "link",
-          ],
-          defaultValue: "default",
-        },
-      ],
-    },
-    {
-      name: "image",
-      type: "string",
-      defaultValue:
-        "https://images.pexels.com/photos/27733947/pexels-photo-27733947.jpeg",
-    },
-    {
-      name: "imageAlt",
-      type: "string",
-      defaultValue: "Spring Collection Hero",
-    },
+        { name: "variant", type: "string", enum: ["default", "outline", "destructive", "secondary", "ghost", "link"], defaultValue: "default" },
+      ] },
+    { name: "image", type: "string", defaultValue: "https://images.pexels.com/photos/27733947/pexels-photo-27733947.jpeg" },
+    { name: "imageAlt", type: "string", defaultValue: "Spring Collection Hero" },
     { name: "backgroundColor", type: "string", required: false },
   ],
 });
@@ -372,59 +187,14 @@ Builder.registerComponent(ProductGrid, {
   name: "ProductGrid",
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/grid-dots.svg",
   inputs: [
-    {
-      name: "title",
-      type: "string",
-      required: false,
-      defaultValue: "Featured Pieces",
-    },
-    {
-      name: "description",
-      type: "string",
-      required: false,
-      defaultValue:
-        "Handpicked favorites that embody our commitment to quality, comfort, and timeless style.",
-    },
-    {
-      name: "products",
-      type: "list",
+    { name: "title", type: "string", required: false, defaultValue: "Featured Pieces" },
+    { name: "description", type: "string", required: false, defaultValue: "Handpicked favorites that embody our commitment to quality, comfort, and timeless style." },
+    { name: "products", type: "list",
       defaultValue: [
-        {
-          id: 1,
-          name: "Classic Cotton Shirt",
-          price: 128,
-          image:
-            "https://images.pexels.com/photos/6276012/pexels-photo-6276012.jpeg",
-          category: "Men",
-          isNew: true,
-        },
-        {
-          id: 2,
-          name: "Linen Summer Dress",
-          price: 198,
-          originalPrice: 248,
-          image:
-            "https://images.pexels.com/photos/1887465/pexels-photo-1887465.jpeg",
-          category: "Women",
-        },
-        {
-          id: 3,
-          name: "Leather Weekend Bag",
-          price: 425,
-          image:
-            "https://images.pexels.com/photos/8365688/pexels-photo-8365688.jpeg",
-          category: "Accessories",
-          isNew: true,
-        },
-        {
-          id: 4,
-          name: "Cashmere Cardigan",
-          price: 285,
-          originalPrice: 325,
-          image:
-            "https://images.pexels.com/photos/4210854/pexels-photo-4210854.jpeg",
-          category: "Women",
-        },
+        { id: 1, name: "Classic Cotton Shirt", price: 128, image: "https://images.pexels.com/photos/6276012/pexels-photo-6276012.jpeg", category: "Men", isNew: true },
+        { id: 2, name: "Linen Summer Dress", price: 198, originalPrice: 248, image: "https://images.pexels.com/photos/1887465/pexels-photo-1887465.jpeg", category: "Women" },
+        { id: 3, name: "Leather Weekend Bag", price: 425, image: "https://images.pexels.com/photos/8365688/pexels-photo-8365688.jpeg", category: "Accessories", isNew: true },
+        { id: 4, name: "Cashmere Cardigan", price: 285, originalPrice: 325, image: "https://images.pexels.com/photos/4210854/pexels-photo-4210854.jpeg", category: "Women" },
       ],
       subFields: [
         { name: "id", type: "number", required: false },
@@ -436,59 +206,16 @@ Builder.registerComponent(ProductGrid, {
         { name: "description", type: "string", required: false },
         { name: "isNew", type: "boolean", required: false },
         { name: "isSale", type: "boolean", required: false },
-      ],
-    },
-    {
-      name: "backgroundColor",
-      type: "string",
-      required: false,
-      defaultValue: "bg-background",
-    },
-    {
-      name: "columns",
-      type: "string",
-      enum: ["2", "3", "4"],
-      required: false,
-      defaultValue: "4",
-    },
-    {
-      name: "viewMode",
-      type: "string",
-      enum: ["grid", "list"],
-      required: false,
-      defaultValue: "grid",
-    },
-    {
-      name: "showViewAllButton",
-      type: "boolean",
-      required: false,
-      defaultValue: true,
-    },
+      ] },
+    { name: "backgroundColor", type: "string", required: false, defaultValue: "bg-background" },
+    { name: "columns", type: "string", enum: ["2", "3", "4"], required: false, defaultValue: "4" },
+    { name: "viewMode", type: "string", enum: ["grid", "list"], required: false, defaultValue: "grid" },
+    { name: "showViewAllButton", type: "boolean", required: false, defaultValue: true },
     { name: "viewAllButtonText", type: "string", required: false },
-    {
-      name: "viewAllButtonHref",
-      type: "string",
-      required: false,
-      defaultValue: "/collections/all",
-    },
-    {
-      name: "showAddToCart",
-      type: "boolean",
-      required: false,
-      defaultValue: false,
-    },
-    {
-      name: "showCategory",
-      type: "boolean",
-      required: false,
-      defaultValue: true,
-    },
-    {
-      name: "showColors",
-      type: "boolean",
-      required: false,
-      defaultValue: false,
-    },
+    { name: "viewAllButtonHref", type: "string", required: false, defaultValue: "/collections/all" },
+    { name: "showAddToCart", type: "boolean", required: false, defaultValue: false },
+    { name: "showCategory", type: "boolean", required: false, defaultValue: true },
+    { name: "showColors", type: "boolean", required: false, defaultValue: false },
   ],
 });
 
@@ -497,21 +224,13 @@ Builder.registerComponent(StyleThemes, {
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/shirt.svg",
   inputs: [
     { name: "title", type: "string", defaultValue: "Three Ways to Summer" },
-    {
-      name: "description",
-      type: "string",
-      defaultValue:
-        "Whether you're planning a coastal escape, hosting garden parties, or navigating city summers, we have the perfect pieces for every occasion.",
-    },
-    {
-      name: "themes",
-      type: "list",
+    { name: "description", type: "string", defaultValue: "Whether you're planning a coastal escape, hosting garden parties, or navigating city summers, we have the perfect pieces for every occasion." },
+    { name: "themes", type: "list",
       defaultValue: [
         {
           title: "Coastal Elegance",
           description: "Effortless pieces perfect for seaside escapes",
-          image:
-            "https://images.pexels.com/photos/32796818/pexels-photo-32796818.jpeg",
+          image: "https://images.pexels.com/photos/32796818/pexels-photo-32796818.jpeg",
           icon: "🌊",
           products: [
             "Linen Button-Down Shirt",
@@ -523,8 +242,7 @@ Builder.registerComponent(StyleThemes, {
         {
           title: "Garden Party Ready",
           description: "Sophisticated looks for outdoor entertaining",
-          image:
-            "https://images.pexels.com/photos/17294877/pexels-photo-17294877.png",
+          image: "https://images.pexels.com/photos/17294877/pexels-photo-17294877.png",
           icon: "☀️",
           products: [
             "Silk Print Dress",
@@ -536,8 +254,7 @@ Builder.registerComponent(StyleThemes, {
         {
           title: "City Summer",
           description: "Professional pieces that beat the heat",
-          image:
-            "https://images.pexels.com/photos/5717325/pexels-photo-5717325.jpeg",
+          image: "https://images.pexels.com/photos/5717325/pexels-photo-5717325.jpeg",
           icon: "✨",
           products: [
             "Lightweight Blazer",
@@ -553,21 +270,9 @@ Builder.registerComponent(StyleThemes, {
         { name: "image", type: "string" },
         { name: "icon", type: "string" },
         { name: "products", type: "list" },
-      ],
-    },
-    {
-      name: "backgroundColor",
-      type: "string",
-      required: false,
-      defaultValue: "bg-background",
-    },
-    {
-      name: "columns",
-      type: "string",
-      enum: ["1", "2", "3", "4"],
-      required: false,
-      defaultValue: "3",
-    },
+      ] },
+    { name: "backgroundColor", type: "string", required: false, defaultValue: "bg-background" },
+    { name: "columns", type: "string", enum: ["1", "2", "3", "4"], required: false, defaultValue: "3" },
   ],
 });
 
@@ -575,146 +280,91 @@ Builder.registerComponent(withChildren(HeroWithChildren), {
   name: "HeroWithChildren",
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/photo.svg",
   inputs: [
-    {
-      name: "image",
-      type: "string",
-      defaultValue:
-        "https://images.pexels.com/photos/27733947/pexels-photo-27733947.jpeg",
-    },
-    {
-      name: "imageAlt",
-      type: "string",
-      defaultValue: "Spring Collection Hero",
-    },
-    {
-      name: "backgroundColor",
-      type: "string",
-      required: false,
-      defaultValue: "bg-gradient-to-r from-navy-50 to-cream-50",
-    },
+    { name: "image", type: "string", defaultValue: "https://images.pexels.com/photos/27733947/pexels-photo-27733947.jpeg" },
+    { name: "imageAlt", type: "string", defaultValue: "Spring Collection Hero" },
+    { name: "backgroundColor", type: "string", required: false, defaultValue: "bg-gradient-to-r from-navy-50 to-cream-50" },
   ],
   defaultChildren: [
     {
-      "@type": "@builder.io/sdk:Element",
+      '@type': '@builder.io/sdk:Element',
       component: {
-        name: "Badge",
+        name: 'Badge',
         options: {
-          children: "New Spring Collection",
-          variant: "secondary",
-          className: "w-fit",
+          children: 'New Spring Collection',
+          variant: 'secondary',
+          className: 'w-fit',
         },
       },
     },
     {
-      "@type": "@builder.io/sdk:Element",
+      '@type': '@builder.io/sdk:Element',
       component: {
-        name: "h1",
+        name: 'h1',
         options: {
-          className: "text-4xl lg:text-6xl font-serif font-bold leading-tight",
+          className: 'text-4xl lg:text-6xl font-serif font-bold leading-tight',
         },
       },
       children: [
+        { '@type': '@builder.io/sdk:Element', component: { name: 'Text', options: { text: 'Timeless Style, ' } } },
         {
-          "@type": "@builder.io/sdk:Element",
-          component: { name: "Text", options: { text: "Timeless Style, " } },
-        },
-        {
-          "@type": "@builder.io/sdk:Element",
+          '@type': '@builder.io/sdk:Element',
           component: {
-            name: "span",
-            options: { className: "text-primary" },
+            name: 'span',
+            options: { className: 'text-primary' },
           },
           children: [
-            {
-              "@type": "@builder.io/sdk:Element",
-              component: { name: "Text", options: { text: "Modern Living" } },
-            },
-          ],
-        },
-      ],
+            { '@type': '@builder.io/sdk:Element', component: { name: 'Text', options: { text: 'Modern Living' } } }
+          ]
+        }
+      ]
     },
     {
-      "@type": "@builder.io/sdk:Element",
+      '@type': '@builder.io/sdk:Element',
       component: {
-        name: "p",
+        name: 'p',
         options: {
-          className: "text-lg text-muted-foreground max-w-md",
+          className: 'text-lg text-muted-foreground max-w-md',
         },
       },
       children: [
-        {
-          "@type": "@builder.io/sdk:Element",
-          component: {
-            name: "Text",
-            options: {
-              text: "Discover our curated collection of classic American clothing designed for life's memorable moments.",
-            },
-          },
-        },
-      ],
+        { '@type': '@builder.io/sdk:Element', component: { name: 'Text', options: { text: "Discover our curated collection of classic American clothing designed for life's memorable moments." } } }
+      ]
     },
     {
-      "@type": "@builder.io/sdk:Element",
+      '@type': '@builder.io/sdk:Element',
       component: {
-        name: "div",
-        options: { className: "flex flex-row gap-4" },
+        name: 'div',
+        options: { className: 'flex flex-row gap-4' },
       },
       children: [
         {
-          "@type": "@builder.io/sdk:Element",
+          '@type': '@builder.io/sdk:Element',
           component: {
-            name: "Button",
+            name: 'Button',
             options: {
-              children: "Shop New Arrivals",
-              variant: "default",
-              size: "lg",
-              className: "btn-primary",
+              children: 'Shop New Arrivals',
+              variant: 'default',
+              size: 'lg',
+              className: 'btn-primary',
             },
           },
         },
         {
-          "@type": "@builder.io/sdk:Element",
+          '@type': '@builder.io/sdk:Element',
           component: {
-            name: "Button",
+            name: 'Button',
             options: {
-              children: "View Style Guide",
-              variant: "outline",
-              size: "lg",
+              children: 'View Style Guide',
+              variant: 'outline',
+              size: 'lg',
             },
           },
-        },
-      ],
-    },
-  ],
+        }
+      ]
+    }
+  ]
 });
 
-Builder.registerComponent(TestComponent, {
-  name: "TestComponent",
-  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/test-pipe.svg",
-  inputs: [
-    { name: "title", type: "string", defaultValue: "Integration Test" },
-    {
-      name: "description",
-      type: "string",
-      required: false,
-      defaultValue:
-        "A small, typed component added to the Kitchen Sink and Builder registry.",
-    },
-    { name: "emoji", type: "string", required: false, defaultValue: "🧪" },
-    {
-      name: "backgroundColor",
-      type: "string",
-      required: false,
-      defaultValue: "bg-muted/30",
-    },
-    {
-      name: "align",
-      type: "string",
-      enum: ["left", "center", "right"],
-      defaultValue: "center",
-    },
-  ],
-});
 
 Builder.register("editor.settings", {
   designTokens: {
@@ -752,19 +402,13 @@ Builder.register("editor.settings", {
       { name: "Primary", value: "hsl(var(--primary))" },
       { name: "Primary Foreground", value: "hsl(var(--primary-foreground))" },
       { name: "Secondary", value: "hsl(var(--secondary))" },
-      {
-        name: "Secondary Foreground",
-        value: "hsl(var(--secondary-foreground))",
-      },
+      { name: "Secondary Foreground", value: "hsl(var(--secondary-foreground))" },
       { name: "Accent", value: "hsl(var(--accent))" },
       { name: "Accent Foreground", value: "hsl(var(--accent-foreground))" },
       { name: "Muted", value: "hsl(var(--muted))" },
       { name: "Muted Foreground", value: "hsl(var(--muted-foreground))" },
       { name: "Destructive", value: "hsl(var(--destructive))" },
-      {
-        name: "Destructive Foreground",
-        value: "hsl(var(--destructive-foreground))",
-      },
+      { name: "Destructive Foreground", value: "hsl(var(--destructive-foreground))" },
       { name: "Background", value: "hsl(var(--background))" },
       { name: "Foreground", value: "hsl(var(--foreground))" },
       { name: "Card", value: "hsl(var(--card))" },
@@ -779,5 +423,6 @@ Builder.register("editor.settings", {
       { name: "Inter", value: "'Inter', system-ui, sans-serif" },
       { name: "Playfair Display", value: "'Playfair Display', Georgia, serif" },
     ],
-  },
+  }
 });
+
