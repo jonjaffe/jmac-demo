@@ -13,6 +13,7 @@ import { Badge } from "./client/components/ui/badge";
 import { Card, CardContent } from "./client/components/ui/card";
 import { Separator } from "./client/components/ui/separator";
 import HeroWithChildren from "./client/components/HeroWithChildren";
+import TestComponent from "./client/components/TestComponent";
 
 Builder.registerComponent(Button, {
   name: "Button",
@@ -366,6 +367,17 @@ Builder.registerComponent(withChildren(HeroWithChildren), {
 });
 
 
+Builder.registerComponent(TestComponent, {
+  name: "TestComponent",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/info-circle.svg",
+  inputs: [
+    { name: "title", type: "string", defaultValue: "Test Title" },
+    { name: "message", type: "string", required: false, defaultValue: "Hello from test component" },
+    { name: "tone", type: "string", enum: ["info", "success", "warning", "error"], defaultValue: "info" },
+    { name: "className", type: "string", required: false },
+  ],
+});
+
 Builder.register("editor.settings", {
   designTokens: {
     colors: [
@@ -425,4 +437,3 @@ Builder.register("editor.settings", {
     ],
   }
 });
-
