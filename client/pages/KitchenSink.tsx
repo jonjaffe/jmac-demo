@@ -337,6 +337,41 @@ const KitchenSink = () => (
           backgroundColor="bg-muted/30"
         />
       </TabsContent>
+      <TabsContent value="newsletter">
+        <h2 className="text-2xl font-semibold text-center mb-4">NewsletterSignup Variants</h2>
+        {/* Original design variant */}
+        <NewsletterSignup
+          heading="STAY CONNECTED"
+          description="Sign up for emails and enjoy 15% off your next full-price purchase!"
+          backgroundColor="bg-navy-800"
+          buttonColor="bg-blue-500 hover:bg-blue-600"
+          onSubmit={(data) => console.log("Newsletter signup:", data)}
+        />
+
+        {/* Email only variant */}
+        <NewsletterSignup
+          heading="JOIN OUR NEWSLETTER"
+          description="Get exclusive access to new arrivals, special offers, and style inspiration delivered straight to your inbox."
+          backgroundColor="bg-sage-800"
+          buttonText="Subscribe"
+          buttonColor="bg-cream-600 hover:bg-cream-700 text-navy-900"
+          showFirstName={false}
+          showLastName={false}
+          onSubmit={(data) => console.log("Email only signup:", data)}
+        />
+
+        {/* Custom variant */}
+        <NewsletterSignup
+          heading="VIP ACCESS"
+          description="Become a VIP member and unlock early access to sales, exclusive events, and personalized styling advice."
+          backgroundColor="bg-gradient-to-r from-navy-900 to-navy-700"
+          buttonText="Join VIP"
+          buttonColor="bg-accent hover:bg-accent/90 text-navy-900"
+          showFirstName={true}
+          showLastName={false}
+          onSubmit={(data) => console.log("VIP signup:", data)}
+        />
+      </TabsContent>
       <TabsContent value="heroChildren">
         <h2 className="text-2xl font-semibold text-center mb-4">HeroWithChildren</h2>
         <HeroWithChildren
