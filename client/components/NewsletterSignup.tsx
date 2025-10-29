@@ -36,7 +36,7 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const data: {
       firstName?: string;
       lastName?: string;
@@ -62,7 +62,7 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
       className={cn(
         "w-full py-8 md:py-12 lg:py-16",
         backgroundColor,
-        className
+        className,
       )}
     >
       <div className="container mx-auto px-4 md:px-8 lg:px-16">
@@ -92,7 +92,7 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                 className={cn(
                   "flex-1 h-12 md:h-[50px] bg-white",
                   "text-sm text-gray-700 placeholder:text-gray-600",
-                  "border-0 focus-visible:ring-1 focus-visible:ring-navy-800"
+                  "border-0 focus-visible:ring-1 focus-visible:ring-navy-800",
                 )}
               />
             )}
@@ -107,7 +107,7 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                 className={cn(
                   "flex-1 h-12 md:h-[50px] bg-white",
                   "text-sm text-gray-700 placeholder:text-gray-600",
-                  "border-0 focus-visible:ring-1 focus-visible:ring-navy-800"
+                  "border-0 focus-visible:ring-1 focus-visible:ring-navy-800",
                 )}
               />
             )}
@@ -121,7 +121,7 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
               className={cn(
                 "flex-1 h-12 md:h-[50px] bg-white",
                 "text-sm text-gray-700 placeholder:text-gray-600",
-                "border-0 focus-visible:ring-1 focus-visible:ring-navy-800"
+                "border-0 focus-visible:ring-1 focus-visible:ring-navy-800",
               )}
             />
 
@@ -132,7 +132,7 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                 "h-12 md:h-[50px]",
                 "text-white text-xs font-normal uppercase tracking-wide",
                 buttonColor,
-                "transition-colors duration-200"
+                "transition-colors duration-200",
               )}
             >
               {buttonText}
