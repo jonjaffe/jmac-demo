@@ -8,6 +8,7 @@ import HeroSection from "./client/components/HeroSection";
 import Navigation from "./client/components/Navigation";
 import ProductGrid from "./client/components/ProductGrid";
 import StyleThemes from "./client/components/StyleThemes";
+import NewsletterSignup from "./client/components/NewsletterSignup";
 import { Button } from "./client/components/ui/button";
 import { Badge } from "./client/components/ui/badge";
 import { Card, CardContent } from "./client/components/ui/card";
@@ -425,4 +426,3 @@ Builder.register("editor.settings", {
     ],
   }
 });
-
