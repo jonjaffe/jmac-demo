@@ -277,6 +277,21 @@ Builder.registerComponent(StyleThemes, {
   ],
 });
 
+Builder.registerComponent(NewsletterSignup, {
+  name: "NewsletterSignup",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/mail.svg",
+  inputs: [
+    { name: "heading", type: "string", required: false, defaultValue: "STAY CONNECTED" },
+    { name: "description", type: "string", required: false, defaultValue: "Sign up for emails and enjoy 15% off your next full-price purchase!" },
+    { name: "backgroundColor", type: "string", required: false, defaultValue: "bg-navy-800" },
+    { name: "buttonText", type: "string", required: false, defaultValue: "SUBMIT" },
+    { name: "buttonColor", type: "string", required: false, defaultValue: "bg-blue-500 hover:bg-blue-600" },
+    { name: "showFirstName", type: "boolean", required: false, defaultValue: true },
+    { name: "showLastName", type: "boolean", required: false, defaultValue: true },
+    { name: "className", type: "string", required: false },
+  ],
+});
+
 Builder.registerComponent(withChildren(HeroWithChildren), {
   name: "HeroWithChildren",
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/photo.svg",
