@@ -7,6 +7,7 @@ import ColorPalette from "../components/ColorPalette";
 import FeaturesSection from "../components/FeaturesSection";
 import ProductGrid from "../components/ProductGrid";
 import StyleThemes from "../components/StyleThemes";
+import NewsletterSignup from "../components/NewsletterSignup";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
 import { Button } from "../components/ui/button";
@@ -382,4 +383,4 @@ const KitchenSink = () => (
   </div>
 );
 
-export default KitchenSink; 
+export default KitchenSink;
