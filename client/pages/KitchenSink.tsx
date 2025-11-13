@@ -14,6 +14,7 @@ import { Badge } from "../components/ui/badge";
 import { Card, CardContent } from "../components/ui/card";
 import { Separator } from "../components/ui/separator";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/tabs";
+import { RakutenButton } from "../components/RakutenButton";
 
 const buttonVariants = ["default", "destructive", "outline", "secondary", "ghost", "link"];
 const buttonSizes = ["default", "sm", "lg", "icon"];
@@ -34,6 +35,7 @@ const KitchenSink = () => (
         <TabsTrigger value="themes">Style Themes</TabsTrigger>
         <TabsTrigger value="heroChildren">Hero With Children</TabsTrigger>
         <TabsTrigger value="ui">UI Components</TabsTrigger>
+        <TabsTrigger value="rakuten">Rakuten Button</TabsTrigger>
         <TabsTrigger value="footer">Footer</TabsTrigger>
       </TabsList>
       <TabsContent value="hero">
@@ -375,6 +377,215 @@ const KitchenSink = () => (
           </Card>
         </div>
       </TabsContent>
+      <TabsContent value="rakuten">
+        <div className="flex flex-col gap-12 p-8">
+          <h2 className="text-3xl font-semibold text-center mb-4">Rakuten Button Component</h2>
+
+          {/* Primary Variants */}
+          <section className="space-y-4">
+            <h3 className="text-2xl font-semibold">Primary Buttons</h3>
+            <div className="flex flex-wrap gap-4">
+              <RakutenButton type="primary-red">Primary Red</RakutenButton>
+              <RakutenButton type="primary-black">Primary Black</RakutenButton>
+              <RakutenButton type="primary-white">Primary White</RakutenButton>
+              <RakutenButton type="primary-red" disabled>Disabled</RakutenButton>
+              <RakutenButton type="primary-red" loading>Loading</RakutenButton>
+            </div>
+          </section>
+
+          {/* Secondary Contained */}
+          <section className="space-y-4">
+            <h3 className="text-2xl font-semibold">Secondary Contained</h3>
+            <div className="flex flex-wrap gap-4">
+              <RakutenButton type="secondary-contained">Enabled</RakutenButton>
+              <RakutenButton type="secondary-contained" disabled>Disabled</RakutenButton>
+              <RakutenButton type="secondary-contained" loading>Loading</RakutenButton>
+            </div>
+          </section>
+
+          {/* Tertiary Text */}
+          <section className="space-y-4">
+            <h3 className="text-2xl font-semibold">Tertiary Text</h3>
+            <div className="flex flex-wrap gap-4">
+              <RakutenButton type="tertiary-text">Enabled</RakutenButton>
+              <RakutenButton type="tertiary-underlined-text">Underlined</RakutenButton>
+              <RakutenButton type="tertiary-text" disabled>Disabled</RakutenButton>
+            </div>
+          </section>
+
+          {/* Tertiary Text Subtle */}
+          <section className="space-y-4">
+            <h3 className="text-2xl font-semibold">Tertiary Text Subtle</h3>
+            <div className="flex flex-wrap gap-4">
+              <RakutenButton type="tertiary-text-subtle">Enabled</RakutenButton>
+              <RakutenButton type="tertiary-underlined-text-subtle">Underlined</RakutenButton>
+              <RakutenButton type="tertiary-text-subtle" disabled>Disabled</RakutenButton>
+            </div>
+          </section>
+
+          {/* With Icons - Left */}
+          <section className="space-y-4">
+            <h3 className="text-2xl font-semibold">Buttons with Left Icon</h3>
+            <div className="flex flex-wrap gap-4">
+              <RakutenButton
+                type="primary-red"
+                leftIcon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.2222 4H5.77778C4.8 4 4 4.8 4 5.77778V18.2222C4 19.2 4.8 20 5.77778 20H18.2222C19.2 20 20 19.2 20 18.2222V5.77778C20 4.8 19.2 4 18.2222 4Z" fill="white"/>
+                </svg>}
+              >
+                With Icon
+              </RakutenButton>
+              <RakutenButton
+                type="secondary-contained"
+                leftIcon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.2222 4H5.77778C4.8 4 4 4.8 4 5.77778V18.2222C4 19.2 4.8 20 5.77778 20H18.2222C19.2 20 20 19.2 20 18.2222V5.77778C20 4.8 19.2 4 18.2222 4Z" fill="black"/>
+                </svg>}
+              >
+                With Icon
+              </RakutenButton>
+              <RakutenButton
+                type="tertiary-text-subtle"
+                leftIcon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.2222 4H5.77778C4.8 4 4 4.8 4 5.77778V18.2222C4 19.2 4.8 20 5.77778 20H18.2222C19.2 20 20 19.2 20 18.2222V5.77778C20 4.8 19.2 4 18.2222 4Z" fill="currentColor"/>
+                </svg>}
+              >
+                With Icon
+              </RakutenButton>
+              <RakutenButton
+                type="primary-red"
+                leftIcon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.2222 4H5.77778C4.8 4 4 4.8 4 5.77778V18.2222C4 19.2 4.8 20 5.77778 20H18.2222C19.2 20 20 19.2 20 18.2222V5.77778C20 4.8 19.2 4 18.2222 4Z" fill="white"/>
+                </svg>}
+                loading
+              >
+                Loading
+              </RakutenButton>
+            </div>
+          </section>
+
+          {/* With Chevron - Right */}
+          <section className="space-y-4">
+            <h3 className="text-2xl font-semibold">Buttons with Chevron (Right)</h3>
+            <div className="flex flex-wrap gap-4">
+              <RakutenButton type="primary-red" rightIcon>
+                With Chevron
+              </RakutenButton>
+              <RakutenButton type="tertiary-text-subtle" rightIcon>
+                With Chevron
+              </RakutenButton>
+              <RakutenButton type="tertiary-underlined-text-subtle" rightIcon>
+                With Chevron
+              </RakutenButton>
+            </div>
+          </section>
+
+          {/* Icon Only */}
+          <section className="space-y-4">
+            <h3 className="text-2xl font-semibold">Icon Only Buttons</h3>
+            <div className="flex flex-wrap gap-4 items-center">
+              <RakutenButton
+                type="primary-red"
+                iconOnly={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.5556 1H3.44444C2.1 1 1 2.1 1 3.44444V20.5556C1 21.9 2.1 23 3.44444 23H20.5556C21.9 23 23 21.9 23 20.5556V3.44444C23 2.1 21.9 1 20.5556 1Z" fill="white"/>
+                </svg>}
+                aria-label="Icon button"
+              />
+              <RakutenButton
+                type="primary-black"
+                iconOnly={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.5556 1H3.44444C2.1 1 1 2.1 1 3.44444V20.5556C1 21.9 2.1 23 3.44444 23H20.5556C21.9 23 23 21.9 23 20.5556V3.44444C23 2.1 21.9 1 20.5556 1Z" fill="white"/>
+                </svg>}
+                aria-label="Icon button"
+              />
+              <RakutenButton
+                type="primary-white"
+                iconOnly={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.5556 1H3.44444C2.1 1 1 2.1 1 3.44444V20.5556C1 21.9 2.1 23 3.44444 23H20.5556C21.9 23 23 21.9 23 20.5556V3.44444C23 2.1 21.9 1 20.5556 1Z" fill="black"/>
+                </svg>}
+                aria-label="Icon button"
+              />
+              <RakutenButton
+                type="tertiary-text-subtle"
+                iconOnly={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.2222 4H5.77778C4.8 4 4 4.8 4 5.77778V18.2222C4 19.2 4.8 20 5.77778 20H18.2222C19.2 20 20 19.2 20 18.2222V5.77778C20 4.8 19.2 4 18.2222 4Z" fill="currentColor"/>
+                </svg>}
+                aria-label="Icon button"
+              />
+              <RakutenButton
+                type="primary-red"
+                iconOnly={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.5556 1H3.44444C2.1 1 1 2.1 1 3.44444V20.5556C1 21.9 2.1 23 3.44444 23H20.5556C21.9 23 23 21.9 23 20.5556V3.44444C23 2.1 21.9 1 20.5556 1Z" fill="white"/>
+                </svg>}
+                disabled
+                aria-label="Icon button disabled"
+              />
+            </div>
+          </section>
+
+          {/* Sizes */}
+          <section className="space-y-4">
+            <h3 className="text-2xl font-semibold">Button Sizes</h3>
+            <div className="flex flex-wrap gap-4 items-center">
+              <RakutenButton type="primary-red" size="regular">Regular Size</RakutenButton>
+              <RakutenButton type="primary-red" size="small">Small Size</RakutenButton>
+              <RakutenButton
+                type="primary-red"
+                size="regular"
+                leftIcon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.2222 4H5.77778C4.8 4 4 4.8 4 5.77778V18.2222C4 19.2 4.8 20 5.77778 20H18.2222C19.2 20 20 19.2 20 18.2222V5.77778C20 4.8 19.2 4 18.2222 4Z" fill="white"/>
+                </svg>}
+              >
+                Regular with Icon
+              </RakutenButton>
+              <RakutenButton
+                type="primary-red"
+                size="small"
+                leftIcon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.2222 4H5.77778C4.8 4 4 4.8 4 5.77778V18.2222C4 19.2 4.8 20 5.77778 20H18.2222C19.2 20 20 19.2 20 18.2222V5.77778C20 4.8 19.2 4 18.2222 4Z" fill="white"/>
+                </svg>}
+              >
+                Small with Icon
+              </RakutenButton>
+            </div>
+          </section>
+
+          {/* Dark Mode Section */}
+          <section className="space-y-4 bg-black p-8 rounded-lg">
+            <h3 className="text-2xl font-semibold text-white">Dark Mode Variants</h3>
+            <div className="flex flex-wrap gap-4">
+              <RakutenButton type="primary-white" darkMode={true}>Primary White</RakutenButton>
+              <RakutenButton type="secondary-contained" darkMode={true}>Secondary</RakutenButton>
+              <RakutenButton type="tertiary-text-subtle" darkMode={true}>Tertiary Subtle</RakutenButton>
+              <RakutenButton type="tertiary-underlined-text-subtle" darkMode={true}>Underlined</RakutenButton>
+              <RakutenButton
+                type="primary-white"
+                darkMode={true}
+                leftIcon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.2222 4H5.77778C4.8 4 4 4.8 4 5.77778V18.2222C4 19.2 4.8 20 5.77778 20H18.2222C19.2 20 20 19.2 20 18.2222V5.77778C20 4.8 19.2 4 18.2222 4Z" fill="black"/>
+                </svg>}
+              >
+                With Icon
+              </RakutenButton>
+            </div>
+          </section>
+
+          {/* Usage Example */}
+          <section className="space-y-4 bg-muted/30 p-8 rounded-lg">
+            <h3 className="text-2xl font-semibold">Component Props</h3>
+            <div className="space-y-2 text-sm font-mono">
+              <p><strong>type:</strong> "primary-red" | "primary-black" | "primary-white" | "secondary-contained" | "tertiary-text" | "tertiary-text-subtle" | "tertiary-underlined-text" | "tertiary-underlined-text-subtle"</p>
+              <p><strong>size:</strong> "regular" | "small"</p>
+              <p><strong>iconPosition:</strong> "none" | "left" | "right" | "only"</p>
+              <p><strong>darkMode:</strong> boolean</p>
+              <p><strong>loading:</strong> boolean</p>
+              <p><strong>disabled:</strong> boolean</p>
+              <p><strong>leftIcon:</strong> ReactNode</p>
+              <p><strong>rightIcon:</strong> boolean (shows chevron)</p>
+              <p><strong>iconOnly:</strong> ReactNode</p>
+            </div>
+          </section>
+        </div>
+      </TabsContent>
       <TabsContent value="footer">
         <Footer showStayInTouch={true} />
       </TabsContent>
@@ -382,4 +593,4 @@ const KitchenSink = () => (
   </div>
 );
 
-export default KitchenSink; 
+export default KitchenSink;
