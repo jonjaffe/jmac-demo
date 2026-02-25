@@ -8,6 +8,7 @@ import FeaturesSection from "../components/FeaturesSection";
 import ProductGrid from "../components/ProductGrid";
 import StyleThemes from "../components/StyleThemes";
 import Footer from "../components/Footer";
+import EmailSignup from "../components/EmailSignup";
 import Navigation from "../components/Navigation";
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
@@ -35,6 +36,7 @@ const KitchenSink = () => (
         <TabsTrigger value="heroChildren">Hero With Children</TabsTrigger>
         <TabsTrigger value="ui">UI Components</TabsTrigger>
         <TabsTrigger value="footer">Footer</TabsTrigger>
+        <TabsTrigger value="emailSignup">Email Signup</TabsTrigger>
       </TabsList>
       <TabsContent value="hero">
         <h2 className="text-2xl font-semibold text-center mb-4">HeroSection Variants</h2>
@@ -378,8 +380,17 @@ const KitchenSink = () => (
       <TabsContent value="footer">
         <Footer showStayInTouch={true} />
       </TabsContent>
+      <TabsContent value="emailSignup">
+        <h2 className="text-2xl font-semibold text-center mb-4">Email Signup Variants</h2>
+        <EmailSignup />
+        <EmailSignup
+          heading="JOIN THE CLUB"
+          subheading="Subscribe to our newsletter and get exclusive early access to new arrivals."
+          backgroundColor="bg-[#0d1f3c]"
+        />
+      </TabsContent>
     </Tabs>
   </div>
 );
 
-export default KitchenSink; 
+export default KitchenSink;
