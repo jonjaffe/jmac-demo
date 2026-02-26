@@ -13,6 +13,21 @@ import { Badge } from "./client/components/ui/badge";
 import { Card, CardContent } from "./client/components/ui/card";
 import { Separator } from "./client/components/ui/separator";
 import HeroWithChildren from "./client/components/HeroWithChildren";
+import EmailSignup from "./client/components/EmailSignup";
+
+Builder.registerComponent(EmailSignup, {
+  name: "EmailSignup",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/mail.svg",
+  inputs: [
+    { name: "heading", type: "string", defaultValue: "STAY CONNECTED" },
+    { name: "subheading", type: "string", defaultValue: "Sign up for emails and enjoy 15% off your next full-price purchase!" },
+    { name: "firstNamePlaceholder", type: "string", defaultValue: "First Name" },
+    { name: "lastNamePlaceholder", type: "string", defaultValue: "Last Name" },
+    { name: "emailPlaceholder", type: "string", defaultValue: "Enter email" },
+    { name: "buttonText", type: "string", defaultValue: "SUBMIT" },
+    { name: "backgroundColor", type: "string", defaultValue: "bg-[#13294E]" },
+  ],
+});
 
 Builder.registerComponent(Button, {
   name: "Button",
@@ -425,4 +440,3 @@ Builder.register("editor.settings", {
     ],
   }
 });
-
