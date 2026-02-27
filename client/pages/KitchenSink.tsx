@@ -7,6 +7,7 @@ import ColorPalette from "../components/ColorPalette";
 import FeaturesSection from "../components/FeaturesSection";
 import ProductGrid from "../components/ProductGrid";
 import StyleThemes from "../components/StyleThemes";
+import StayConnected from "../components/StayConnected";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
 import { Button } from "../components/ui/button";
@@ -34,6 +35,7 @@ const KitchenSink = () => (
         <TabsTrigger value="themes">Style Themes</TabsTrigger>
         <TabsTrigger value="heroChildren">Hero With Children</TabsTrigger>
         <TabsTrigger value="ui">UI Components</TabsTrigger>
+        <TabsTrigger value="stayconnected">Stay Connected</TabsTrigger>
         <TabsTrigger value="footer">Footer</TabsTrigger>
       </TabsList>
       <TabsContent value="hero">
@@ -375,6 +377,15 @@ const KitchenSink = () => (
           </Card>
         </div>
       </TabsContent>
+      <TabsContent value="stayconnected">
+        <h2 className="text-2xl font-semibold text-center mb-4">StayConnected Variants</h2>
+        <StayConnected />
+        <StayConnected
+          heading="JOIN OUR COMMUNITY"
+          description="Subscribe and get exclusive early access to new arrivals and member-only offers."
+          backgroundColor="bg-[#1a3a6e]"
+        />
+      </TabsContent>
       <TabsContent value="footer">
         <Footer showStayInTouch={true} />
       </TabsContent>
@@ -382,4 +393,4 @@ const KitchenSink = () => (
   </div>
 );
 
-export default KitchenSink; 
+export default KitchenSink;
