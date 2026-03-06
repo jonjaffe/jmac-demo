@@ -10,6 +10,7 @@ import CallToActionSection, {
   ActionButton,
 } from "@/components/CallToActionSection";
 import FeaturesSection, { Feature } from "@/components/FeaturesSection";
+import EmailSignup from "@/components/EmailSignup";
 
 const Index = () => {
   const featuredProducts: Product[] = [
@@ -101,6 +102,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+
+      <EmailSignup />
 
       <HeroSection
         badge="New Spring Collection"
