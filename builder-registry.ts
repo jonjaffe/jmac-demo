@@ -8,6 +8,7 @@ import HeroSection from "./client/components/HeroSection";
 import Navigation from "./client/components/Navigation";
 import ProductGrid from "./client/components/ProductGrid";
 import StyleThemes from "./client/components/StyleThemes";
+import SignupForm from "./client/components/SignupForm";
 import { Button } from "./client/components/ui/button";
 import { Badge } from "./client/components/ui/badge";
 import { Card, CardContent } from "./client/components/ui/card";
@@ -181,6 +182,19 @@ Builder.registerComponent(Navigation, {
   name: "Navigation",
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/menu-2.svg",
   inputs: [],
+});
+
+Builder.registerComponent(SignupForm, {
+  name: "SignupForm",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/mail.svg",
+  inputs: [
+    { name: "badge", type: "string", required: false, defaultValue: "Stay Updated" },
+    { name: "title", type: "string", defaultValue: "Join Our Newsletter" },
+    { name: "description", type: "string", defaultValue: "Subscribe to get exclusive offers, style tips, and early access to new collections." },
+    { name: "placeholder", type: "string", defaultValue: "Enter your email" },
+    { name: "buttonText", type: "string", defaultValue: "Sign Up" },
+    { name: "backgroundColor", type: "string", required: false, defaultValue: "bg-gradient-to-r from-navy-50 to-cream-50" },
+  ],
 });
 
 Builder.registerComponent(ProductGrid, {
@@ -425,4 +439,3 @@ Builder.register("editor.settings", {
     ],
   }
 });
-
