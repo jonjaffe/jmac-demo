@@ -1,4 +1,5 @@
 import { Builder, withChildren } from "@builder.io/react";
+import EmailSignupBanner from "./client/components/EmailSignupBanner";
 import CallToActionSection from "./client/components/CallToActionSection";
 import CollectionsShowcase from "./client/components/CollectionsShowcase";
 import ColorPalette from "./client/components/ColorPalette";
@@ -13,6 +14,16 @@ import { Badge } from "./client/components/ui/badge";
 import { Card, CardContent } from "./client/components/ui/card";
 import { Separator } from "./client/components/ui/separator";
 import HeroWithChildren from "./client/components/HeroWithChildren";
+
+Builder.registerComponent(EmailSignupBanner, {
+  name: "EmailSignupBanner",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/mail.svg",
+  inputs: [
+    { name: "heading", type: "string", defaultValue: "STAY CONNECTED" },
+    { name: "subheading", type: "string", defaultValue: "Sign up for emails and enjoy 15% off your next full-price purchase!" },
+    { name: "buttonText", type: "string", defaultValue: "SUBMIT" },
+  ],
+});
 
 Builder.registerComponent(Button, {
   name: "Button",
@@ -425,4 +436,3 @@ Builder.register("editor.settings", {
     ],
   }
 });
-

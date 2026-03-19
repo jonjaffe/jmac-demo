@@ -1,4 +1,5 @@
 import React from "react";
+import EmailSignupBanner from "../components/EmailSignupBanner";
 import HeroSection from "../components/HeroSection";
 import HeroWithChildren from "../components/HeroWithChildren";
 import CallToActionSection from "../components/CallToActionSection";
@@ -35,6 +36,7 @@ const KitchenSink = () => (
         <TabsTrigger value="heroChildren">Hero With Children</TabsTrigger>
         <TabsTrigger value="ui">UI Components</TabsTrigger>
         <TabsTrigger value="footer">Footer</TabsTrigger>
+        <TabsTrigger value="emailSignup">Email Signup Banner</TabsTrigger>
       </TabsList>
       <TabsContent value="hero">
         <h2 className="text-2xl font-semibold text-center mb-4">HeroSection Variants</h2>
@@ -378,8 +380,19 @@ const KitchenSink = () => (
       <TabsContent value="footer">
         <Footer showStayInTouch={true} />
       </TabsContent>
+      <TabsContent value="emailSignup">
+        <h2 className="text-2xl font-semibold text-center mb-4">EmailSignupBanner Variants</h2>
+        <EmailSignupBanner />
+        <div className="mt-8">
+          <EmailSignupBanner
+            heading="JOIN THE COMMUNITY"
+            subheading="Subscribe to our newsletter and be the first to know about new arrivals and exclusive offers."
+            buttonText="SUBSCRIBE"
+          />
+        </div>
+      </TabsContent>
     </Tabs>
   </div>
 );
 
-export default KitchenSink; 
+export default KitchenSink;

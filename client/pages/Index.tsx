@@ -2,6 +2,7 @@ import { Truck, RotateCcw, Shield, Star } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
+import EmailSignupBanner from "@/components/EmailSignupBanner";
 import ProductGrid, { Product } from "@/components/ProductGrid";
 import CollectionsShowcase, {
   Collection,
@@ -101,6 +102,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+
+      <EmailSignupBanner />
 
       <HeroSection
         badge="New Spring Collection"
