@@ -9,11 +9,13 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
+import { CartFlyout } from "@/components/CartFlyout";
 import useNavigation from "@/hooks/use-navigation";
 
 const Navigation = () => {
   const location = useLocation();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const { navigationData, loading, error } = useNavigation();
 
   // Use the fetched main navigation data or fallback to empty array if loading
@@ -188,7 +190,12 @@ const Navigation = () => {
             </Button>
 
             {/* Shopping bag */}
-            <Button variant="ghost" size="icon" className="relative">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="relative"
+              onClick={() => setIsCartOpen(true)}
+            >
               <ShoppingBag className="h-5 w-5" />
               <span className="absolute -top-1 -right-1 h-4 w-4 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">
                 0
@@ -197,6 +204,9 @@ const Navigation = () => {
           </div>
         </div>
       </div>
+
+      {/* Cart Flyout */}
+      <CartFlyout isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </header>
   );
 };
