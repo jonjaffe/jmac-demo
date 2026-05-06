@@ -1,4 +1,5 @@
 import React from "react";
+import StayConnected from "../components/StayConnected";
 import HeroSection from "../components/HeroSection";
 import HeroWithChildren from "../components/HeroWithChildren";
 import CallToActionSection from "../components/CallToActionSection";
@@ -35,6 +36,7 @@ const KitchenSink = () => (
         <TabsTrigger value="heroChildren">Hero With Children</TabsTrigger>
         <TabsTrigger value="ui">UI Components</TabsTrigger>
         <TabsTrigger value="footer">Footer</TabsTrigger>
+        <TabsTrigger value="stayConnected">Stay Connected</TabsTrigger>
       </TabsList>
       <TabsContent value="hero">
         <h2 className="text-2xl font-semibold text-center mb-4">HeroSection Variants</h2>
@@ -378,8 +380,17 @@ const KitchenSink = () => (
       <TabsContent value="footer">
         <Footer showStayInTouch={true} />
       </TabsContent>
+      <TabsContent value="stayConnected">
+        <h2 className="text-2xl font-semibold text-center mb-4">StayConnected Variants</h2>
+        <StayConnected />
+        <StayConnected
+          heading="JOIN THE CLUB"
+          subheading="Be the first to know about new arrivals, exclusive offers, and style inspiration."
+          buttonText="SUBSCRIBE"
+        />
+      </TabsContent>
     </Tabs>
   </div>
 );
 
-export default KitchenSink; 
+export default KitchenSink;

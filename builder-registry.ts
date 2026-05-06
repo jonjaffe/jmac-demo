@@ -13,6 +13,17 @@ import { Badge } from "./client/components/ui/badge";
 import { Card, CardContent } from "./client/components/ui/card";
 import { Separator } from "./client/components/ui/separator";
 import HeroWithChildren from "./client/components/HeroWithChildren";
+import StayConnected from "./client/components/StayConnected";
+
+Builder.registerComponent(StayConnected, {
+  name: "StayConnected",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/mail.svg",
+  inputs: [
+    { name: "heading", type: "string", defaultValue: "STAY CONNECTED" },
+    { name: "subheading", type: "string", defaultValue: "Sign up for emails and enjoy 15% off your next full-price purchase!" },
+    { name: "buttonText", type: "string", defaultValue: "SUBMIT" },
+  ],
+});
 
 Builder.registerComponent(Button, {
   name: "Button",
@@ -425,4 +436,3 @@ Builder.register("editor.settings", {
     ],
   }
 });
-
