@@ -8,6 +8,9 @@ import HeroSection from "./client/components/HeroSection";
 import Navigation from "./client/components/Navigation";
 import ProductGrid from "./client/components/ProductGrid";
 import StyleThemes from "./client/components/StyleThemes";
+import StyleProfileQuiz from "./client/components/StyleProfileQuiz";
+import OccasionBuilder from "./client/components/OccasionBuilder";
+import StyleConciergeBuilder from "./client/components/StyleConciergeBuilder";
 import { Button } from "./client/components/ui/button";
 import { Badge } from "./client/components/ui/badge";
 import { Card, CardContent } from "./client/components/ui/card";
@@ -276,6 +279,56 @@ Builder.registerComponent(StyleThemes, {
   ],
 });
 
+Builder.registerComponent(StyleConciergeBuilder, {
+  name: "StyleConciergeBuilder",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/sparkles.svg",
+  inputs: [
+    { name: "title", type: "string", defaultValue: "Style Concierge", required: false },
+    { name: "description", type: "string", defaultValue: "Your personal styling assistant. Discover curated looks tailored to your style.", required: false },
+    { name: "showNav", type: "boolean", defaultValue: true, required: false },
+  ],
+  hideFromInsert: false,
+  description: "Complete Style Concierge experience with quiz and occasion builder",
+});
+
+Builder.registerComponent(StyleProfileQuiz, {
+  name: "StyleProfileQuiz",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/quiz.svg",
+  inputs: [
+    { name: "onComplete", type: "string", required: false },
+  ],
+  hideFromInsert: true,
+  description: "Interactive style preference quiz - use StyleConciergeBuilder instead",
+});
+
+Builder.registerComponent(OccasionBuilder, {
+  name: "OccasionBuilder",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/calendar-event.svg",
+  inputs: [
+    {
+      name: "styleProfile",
+      type: "object",
+      required: false,
+      defaultValue: {
+        colorPalette: "Neutral",
+        silhouette: "Mixed",
+        printAffinity: "Subtle",
+        lifestyle: "Social",
+        archetype: "Personal Style",
+      },
+      subFields: [
+        { name: "colorPalette", type: "string" },
+        { name: "silhouette", type: "string" },
+        { name: "printAffinity", type: "string" },
+        { name: "lifestyle", type: "string" },
+        { name: "archetype", type: "string" },
+      ],
+    },
+  ],
+  hideFromInsert: true,
+  description: "Curated outfit builder - use StyleConciergeBuilder instead",
+});
+
 Builder.registerComponent(withChildren(HeroWithChildren), {
   name: "HeroWithChildren",
   image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/photo.svg",
@@ -425,4 +478,3 @@ Builder.register("editor.settings", {
     ],
   }
 });
-
