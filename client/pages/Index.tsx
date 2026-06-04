@@ -1,4 +1,5 @@
-import { Truck, RotateCcw, Shield, Star } from "lucide-react";
+import { Truck, RotateCcw, Shield, Star, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
@@ -10,6 +11,8 @@ import CallToActionSection, {
   ActionButton,
 } from "@/components/CallToActionSection";
 import FeaturesSection, { Feature } from "@/components/FeaturesSection";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 const Index = () => {
   const featuredProducts: Product[] = [
@@ -129,6 +132,39 @@ const Index = () => {
         description="Explore our carefully curated collections designed for every occasion and season."
         collections={collections}
       />
+
+      <div className="w-full px-4 py-16 md:py-24">
+        <div className="max-w-4xl mx-auto">
+          <Card className="relative overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-amber-50 via-background to-blue-50">
+            <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
+              <div className="flex flex-col justify-center">
+                <div className="flex items-center gap-2 mb-4">
+                  <Sparkles className="h-5 w-5 text-primary" />
+                  <span className="text-sm font-semibold text-primary">NEW FEATURE</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold mb-3">
+                  Discover Your Style
+                </h2>
+                <p className="text-base text-muted-foreground mb-6">
+                  Meet your personal Style Concierge. Get curated outfit recommendations tailored to your preferences, perfect for any occasion.
+                </p>
+                <Link to="/style-concierge">
+                  <Button size="lg" className="w-full sm:w-auto">
+                    Try Style Concierge
+                  </Button>
+                </Link>
+              </div>
+              <div className="hidden md:block">
+                <img
+                  src="https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg"
+                  alt="Style Concierge"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
 
       <CallToActionSection
         badge="Style Guide"

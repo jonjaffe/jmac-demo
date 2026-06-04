@@ -23,10 +23,10 @@ const Navigation = () => {
   const secondaryNavItems = [
     { label: "New Arrivals", href: "/collections/new-arrivals" },
     { label: "Best Sellers", href: "/collections/best-sellers" },
+    { label: "Style Concierge", href: "/style-concierge" },
     { label: "Style Guide", href: "/style-guide" },
     { label: "Our Story", href: "/about" },
     { label: "Blog", href: "/blog" },
-    { label: "Kitchen Sink", href: "/kitchen-sink" },
   ];
 
   // Show loading state if data is being fetched

@@ -12,6 +12,7 @@ import Collections from "./pages/Collections";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import StyleGuide from "./pages/StyleGuide";
+import StyleConcierge from "./pages/StyleConcierge";
 import BuilderPage from "../builder-page";
 import KitchenSink from "./pages/KitchenSink";
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/style-guide" element={<StyleGuide />} />
+          <Route path="/style-concierge" element={<StyleConcierge />} />
           <Route path="/kitchen-sink" element={<KitchenSink />} />
           <Route path="*" element={<BuilderPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
