@@ -7,6 +7,7 @@ import ColorPalette from "../components/ColorPalette";
 import FeaturesSection from "../components/FeaturesSection";
 import ProductGrid from "../components/ProductGrid";
 import StyleThemes from "../components/StyleThemes";
+import StayConnected from "../components/StayConnected";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
 import { Button } from "../components/ui/button";
@@ -33,6 +34,7 @@ const KitchenSink = () => (
         <TabsTrigger value="products">Product Grid</TabsTrigger>
         <TabsTrigger value="themes">Style Themes</TabsTrigger>
         <TabsTrigger value="heroChildren">Hero With Children</TabsTrigger>
+        <TabsTrigger value="stayConnected">Stay Connected</TabsTrigger>
         <TabsTrigger value="ui">UI Components</TabsTrigger>
         <TabsTrigger value="footer">Footer</TabsTrigger>
       </TabsList>
@@ -343,6 +345,10 @@ const KitchenSink = () => (
           backgroundColor="bg-gradient-to-r from-navy-50 to-cream-50"
         />
       </TabsContent>
+      <TabsContent value="stayConnected">
+        <h2 className="text-2xl font-semibold text-center mb-4">StayConnected</h2>
+        <StayConnected />
+      </TabsContent>
       <TabsContent value="ui">
         <div className="flex flex-col items-center gap-8">
           <h2 className="text-2xl font-semibold">Button Variants</h2>
@@ -382,4 +388,4 @@ const KitchenSink = () => (
   </div>
 );
 
-export default KitchenSink; 
+export default KitchenSink;

@@ -8,6 +8,7 @@ import HeroSection from "./client/components/HeroSection";
 import Navigation from "./client/components/Navigation";
 import ProductGrid from "./client/components/ProductGrid";
 import StyleThemes from "./client/components/StyleThemes";
+import StayConnected from "./client/components/StayConnected";
 import { Button } from "./client/components/ui/button";
 import { Badge } from "./client/components/ui/badge";
 import { Card, CardContent } from "./client/components/ui/card";
@@ -366,6 +367,16 @@ Builder.registerComponent(withChildren(HeroWithChildren), {
 });
 
 
+Builder.registerComponent(StayConnected, {
+  name: "StayConnected",
+  image: "https://cdn.jsdelivr.net/npm/@tabler/icons/icons/mail.svg",
+  inputs: [
+    { name: "eyebrow", type: "string", defaultValue: "STAY CONNECTED" },
+    { name: "description", type: "string", defaultValue: "Sign up for emails and enjoy 15% off your next full-price purchase!" },
+    { name: "backgroundColor", type: "string", required: false, defaultValue: "bg-[#13294E]" },
+  ],
+});
+
 Builder.register("editor.settings", {
   designTokens: {
     colors: [
@@ -425,4 +436,3 @@ Builder.register("editor.settings", {
     ],
   }
 });
-
