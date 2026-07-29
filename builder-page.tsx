@@ -1,6 +1,8 @@
 import React from "react";
 import { BuilderComponent, builder, useIsPreviewing } from "@builder.io/react";
 import "./builder-registry";
+import Navigation from "./client/components/Navigation";
+import Footer from "./client/components/Footer";
 
 // Builder Public API Key set in .env file
 builder.init(import.meta.env.VITE_PUBLIC_BUILDER_KEY!);
@@ -43,8 +45,10 @@ export default function BuilderPage() {
   // return the page when found
   return (
     <>
+      <Navigation />
       {/* Render the Builder page */}
       <BuilderComponent model="page" content={content} />
+      <Footer />
     </>
   );
 }

@@ -15,7 +15,7 @@ interface FooterProps {
   showStayInTouch?: boolean;
 }
 
-const Footer = ({ showStayInTouch = true }: FooterProps) => {
+const Footer = ({ showStayInTouch = false }: FooterProps) => {
   const shopLinks = [
     { label: "Women", href: "/collections/women" },
     { label: "Men", href: "/collections/men" },

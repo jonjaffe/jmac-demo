@@ -149,7 +149,7 @@ Builder.registerComponent(Footer, {
   name: "Footer",
   image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgMTlIMjFWMjFIM1YxOVoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPgo8cGF0aCBkPSJNMyAxM0gyMVYxNUgzVjEzWiIgZmlsbD0iY3VycmVudENvbG9yIi8+CjxwYXRoIGQ9Ik0zIDdIMjFWOEgzVjdaIiBmaWxsPSJjdXJyZW50Q29sb3IiLz4KPC9zdmc+",
   inputs: [
-    { name: "showStayInTouch", type: "boolean", defaultValue: true },
+    { name: "showStayInTouch", type: "boolean", defaultValue: false },
   ],
 });
 
