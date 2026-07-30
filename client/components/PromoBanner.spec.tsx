@@ -23,4 +23,18 @@ describe("PromoBanner", () => {
     await user.click(screen.getByRole("button", { name: /Dismiss promotion/i }));
     expect(screen.queryByText(/Members get early access/i)).not.toBeInTheDocument();
   });
+
+  it("accepts custom link href and label", () => {
+    renderWithProviders(
+      <PromoBanner
+        message="New arrivals are here."
+        href="/collections/new-arrivals"
+        linkLabel="Browse now"
+      />,
+    );
+    expect(screen.getByRole("link", { name: /Browse now/i })).toHaveAttribute(
+      "href",
+      "/collections/new-arrivals",
+    );
+  });
 });

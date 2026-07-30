@@ -7,8 +7,14 @@ import Blog from "./Blog";
 import NotFound from "./NotFound";
 
 describe("Index page", () => {
-  it("renders home hero and featured content", () => {
+  it("renders promo banner, home hero, and featured content", () => {
     renderWithProviders(<Index />);
+    expect(
+      screen.getByRole("region", { name: /Promotion/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Spring sale: enjoy complimentary shipping/i),
+    ).toBeInTheDocument();
     expect(screen.getAllByText("McLaughlin & Co.").length).toBeGreaterThan(0);
     expect(screen.getByText(/Shop New Arrivals/i)).toBeInTheDocument();
   });
