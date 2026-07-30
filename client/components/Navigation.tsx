@@ -177,9 +177,11 @@ const Navigation = () => {
               <Search className="h-5 w-5" />
             </Button>
 
-            {/* Account */}
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
+            {/* Account / Admin */}
+            <Button variant="ghost" size="icon" asChild>
+              <Link to="/admin" aria-label="Admin">
+                <User className="h-5 w-5" />
+              </Link>
             </Button>
 
             {/* Wishlist */}

@@ -14,6 +14,7 @@ import BlogPost from "./pages/BlogPost";
 import StyleGuide from "./pages/StyleGuide";
 import BuilderPage from "../builder-page";
 import KitchenSink from "./pages/KitchenSink";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -30,8 +31,9 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/style-guide" element={<StyleGuide />} />
           <Route path="/kitchen-sink" element={<KitchenSink />} />
-          <Route path="*" element={<BuilderPage />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<BuilderPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

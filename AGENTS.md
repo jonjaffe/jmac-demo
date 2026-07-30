@@ -35,7 +35,7 @@ shared/                   # Types used by both client & server
 The routing system is powered by React Router 6:
 
 - `client/pages/Index.tsx` represents the home page.
-- Routes are defined in `client/App.tsx` using the `react-router-dom` import
+- Routes are defined in `client/main.tsx` using the `react-router-dom` import
 - Route files are located in the `client/pages/` directory
 
 For example, routes can be defined with:
@@ -45,8 +45,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 <Routes>
   <Route path="/" element={<Index />} />
+  <Route path="/admin" element={<Admin />} />
   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-  <Route path="*" element={<NotFound />} />
+  <Route path="*" element={<BuilderPage />} />
 </Routes>;
 ```
 
@@ -74,7 +75,10 @@ className={cn(
 
 #### Example API Routes
 - `GET /api/ping` - Simple ping api
-- `GET /api/demo` - Demo endpoint  
+- `GET /api/demo` - Demo endpoint
+- `POST /api/agent/docs-tests` - Kick off Cursor docs/tests cloud agent (requires `x-admin-token`)
+
+See `docs/agent-workflow.md` for the PR + admin dual-trigger agent setup.
 
 ### Shared Types
 Import consistent types in both client and server:
@@ -150,8 +154,7 @@ const data: MyRouteResponse = await response.json();
 ## Production Deployment
 
 - **Standard**: `npm run build` + `npm start`
-- **Docker**: Dockerfile included
-- **Binary**: Self-contained executables (Linux, macOS, Windows)
+- **Netlify**: `netlify.toml` builds the client and routes `/api/*` to Functions
 - Express serves the built React SPA with fallback routing support
 
 ## Architecture Notes
@@ -159,6 +162,7 @@ const data: MyRouteResponse = await response.json();
 - Single-port development with Vite + Express integration
 - TypeScript throughout (client, server, shared)
 - Full hot reload for rapid development
-- Production-ready with multiple deployment options
+- Production-ready with Netlify and Node deploy options
 - Comprehensive UI component library included
 - Type-safe API communication via shared interfaces
+- Docs live in `docs/`; unit tests use Vitest + Testing Library (`npm test`)

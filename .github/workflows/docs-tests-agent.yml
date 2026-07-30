@@ -1,0 +1,57 @@
+name: Docs and tests agent
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: docs-tests-agent-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  docs-tests-agent:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 2
+
+      - name: Skip if agent commit
+        id: skip
+        run: |
+          MSG=$(git log -1 --pretty=%B)
+          if echo "$MSG" | grep -q '\[agent-docs-tests\]'; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Latest commit contains [agent-docs-tests]; skipping."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup Node
+        if: steps.skip.outputs.skip != 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.skip.outputs.skip != 'true'
+        run: npm ci
+
+      - name: Install Cursor SDK
+        if: steps.skip.outputs.skip != 'true'
+        run: npm install @cursor/sdk
+
+      - name: Run docs and tests agent
+        if: steps.skip.outputs.skip != 'true'
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: node scripts/run-docs-tests-agent.mjs
