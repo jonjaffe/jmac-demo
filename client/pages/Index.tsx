@@ -10,6 +10,7 @@ import CallToActionSection, {
   ActionButton,
 } from "@/components/CallToActionSection";
 import FeaturesSection, { Feature } from "@/components/FeaturesSection";
+import PromoBanner from "@/components/PromoBanner";
 
 const Index = () => {
   const featuredProducts: Product[] = [
@@ -100,6 +101,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PromoBanner message="Spring sale: enjoy complimentary shipping on orders over $150." />
       <Navigation />
 
       <HeroSection
