@@ -12,6 +12,20 @@ describe("Index page", () => {
     expect(screen.getAllByText("McLaughlin & Co.").length).toBeGreaterThan(0);
     expect(screen.getByText(/Shop New Arrivals/i)).toBeInTheDocument();
   });
+
+  it("renders the dismissible promo banner above navigation", () => {
+    renderWithProviders(<Index />);
+    expect(
+      screen.getByRole("region", { name: "Promotion" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Spring sale: enjoy complimentary shipping/i),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Shop sale" })).toHaveAttribute(
+      "href",
+      "/collections/sale",
+    );
+  });
 });
 
 describe("Collections page", () => {

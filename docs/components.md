@@ -6,6 +6,7 @@ Located in `client/components/` (excluding `ui/`):
 
 | Component | Role |
 |---|---|
+| `PromoBanner` | Dismissible top-of-page promotion strip with message and optional CTA link (defaults to `/collections/sale`) |
 | `Navigation` | Sticky header, Builder-driven main nav, account link to `/admin` |
 | `Footer` | Shop / help / company links; optional newsletter |
 | `HeroSection` | Marketing hero with CTAs and image |
