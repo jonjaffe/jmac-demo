@@ -20,7 +20,7 @@ npm test
 ## Current coverage (baseline)
 
 - Utils: `cn()`
-- Components: Navigation, Footer, HeroSection, ProductGrid, CollectionsShowcase, FeaturesSection, CallToActionSection
+- Components: Navigation, PromoBanner, Footer, HeroSection, ProductGrid, CollectionsShowcase, FeaturesSection, CallToActionSection
 - Pages: Index, Collections, Blog, NotFound, Admin
 - Server: `/api/ping`, `/api/demo`, `/api/agent/docs-tests`
 

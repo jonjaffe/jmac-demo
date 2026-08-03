@@ -7,6 +7,7 @@ Located in `client/components/` (excluding `ui/`):
 | Component | Role |
 |---|---|
 | `Navigation` | Sticky header, Builder-driven main nav, account link to `/admin` |
+| `PromoBanner` | Dismissible top-of-page promo strip with message and optional CTA link (defaults to `/collections/sale`) |
 | `Footer` | Shop / help / company links; optional newsletter |
 | `HeroSection` | Marketing hero with CTAs and image |
 | `HeroWithChildren` | Hero variant used with composed children |

@@ -12,6 +12,17 @@ describe("Index page", () => {
     expect(screen.getAllByText("McLaughlin & Co.").length).toBeGreaterThan(0);
     expect(screen.getByText(/Shop New Arrivals/i)).toBeInTheDocument();
   });
+
+  it("renders the promo banner above navigation", () => {
+    renderWithProviders(<Index />);
+    expect(screen.getByRole("region", { name: "Promotion" })).toHaveTextContent(
+      /Spring sale: enjoy complimentary shipping on orders over \$150\./i,
+    );
+    expect(screen.getByRole("link", { name: "Shop sale" })).toHaveAttribute(
+      "href",
+      "/collections/sale",
+    );
+  });
 });
 
 describe("Collections page", () => {
