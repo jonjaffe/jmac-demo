@@ -4,7 +4,7 @@ Routes are defined in [`client/main.tsx`](../client/main.tsx).
 
 | Path | Component | Purpose |
 |---|---|---|
-| `/` | `Index` | Home: hero, featured products, collections, CTA, features |
+| `/` | `Index` | Home: promo banner, hero, featured products, collections, CTA, features |
 | `/collections/:category` | `Collections` | Category product listing with filters |
 | `/blog` | `Blog` | Blog post index |
 | `/blog/:slug` | `BlogPost` | Individual blog post |
